@@ -5,24 +5,24 @@ public class LongestStreak {
 
     public static void Streak(String str) {
         //HOW TO LOOP OVER CHARACTERS IN A STRING?
-        //HOW TO IDENTIFY A STREAK OF CHARACTERS?
+        //HOW TO IDENTIFY A STREAK OF CHARACTERS? 
         //HOW TO TRACK THE LONGEST STREAK?
         
         int high = 0;
-        char ch, chAfter;
+        char ch, ch2;
         for (int i = 0; i < str.length(); i++) {
-            int count = 0;
+            int tracker = 0;
             for (int k = i; k < str.length(); k++) {
                 ch = str.charAt(i);
-                chAfter = str.charAt(k);
-                if (ch == chAfter) {
-                count++;
+                ch2 = str.charAt(k);
+                if (ch == ch2) {
+                tracker++;
                 } else {
                     break;
                 }
             }
-            if (count > high) {
-                high = count;
+            if (tracker > high) {
+                high = tracker;
             }
         }
         System.out.println(high);
